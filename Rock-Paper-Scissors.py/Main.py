@@ -31,6 +31,10 @@ Keeplayingbool= True
 while Keeplayingbool== True:
     print("\nEnter your choice\n1 - Rock\n2 - Paper\n3 - Scissors")
     userinput= int(input("\nEnter your choice: "))
+
+    while userinput not in range (1,4):
+        userinput=int(input("Enter a valid choice: "))
+
     if userinput == 1:
         text = "Rock"
     elif userinput == 2:
@@ -47,7 +51,7 @@ while Keeplayingbool== True:
     rules(text,computerchoice)
 
     playAagin = input ("\nDo you want to play again? (Y/N): ").lower()
-    
+
     while playAagin.isalpha() == False:
         playAagin = input ("Input must be Y / N only: ").lower()
 

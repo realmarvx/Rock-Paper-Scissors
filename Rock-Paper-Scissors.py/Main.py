@@ -2,6 +2,7 @@ import random
 computerWins = 0
 humanWins=0
 ties = 0 
+
 def rules(Human,Computer):
     global humanWins, computerWins, ties
     if (Human == "Rock" and Computer=="Scissors") or (Human=="Paper"and Computer =="Rock")or (Human == "Scissors" and Computer=="Paper"):
@@ -12,7 +13,8 @@ def rules(Human,Computer):
         return print("<== Computer wins! ==>")
     elif (Computer == Human):
         ties+=1
-        return print("<== It's a tie! ==>")                                                   
+        return print("<== It's a tie! ==>")    
+                                                   
 def computerrand():
     computer = int (random.randrange(1,3))
     if computer == 1:
@@ -22,8 +24,10 @@ def computerrand():
     elif computer == 3:
         computertext = "Scissors"
     return computertext
+
 print ("\n\nWinning rules of the game ROCK PAPER SCISSORS are:\nRock vs Paper -> Paper wins\nRock vs Scissors -> Rock wins\nPaper vs Scissors -> Scissors wins")
 Keeplayingbool= True
+
 while Keeplayingbool== True:
     print("\nEnter your choice\n1 - Rock\n2 - Paper\n3 - Scissors")
     userinput= int(input("\nEnter your choice: "))
@@ -33,13 +37,17 @@ while Keeplayingbool== True:
         text = "Paper"
     elif userinput == 3:
         text = "Scissors"
+
     computerchoice= computerrand()
+
     print ("User Choice is: {}".format(text))
     print("Now it's Computer's Turn...\nComputer choice is: {}".format(computerchoice))
-
     print ("{} vs {}".format(text,computerchoice))
+
     rules(text,computerchoice)
+
     playAagin = input ("\nDo you want to play again? (Y/N): ").lower()
+    
     while playAagin.isalpha() == False:
         playAagin = input ("Input must be Y / N only: ").lower()
 

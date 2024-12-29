@@ -16,7 +16,7 @@ def rules(Human,Computer):
         return print("<== It's a tie! ==>")    
                                                    
 def computerrand():
-    computer = int (random.randrange(1,3))
+    computer = int (random.randrange(1,4))
     if computer == 1:
         computertext = "Rock"
     elif computer == 2:
